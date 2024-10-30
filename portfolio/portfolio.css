@@ -1,13 +1,16 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Roboto', sans-serif;
     color: #222020;
     line-height: 1.6;
     margin: 0;
     padding: 0;
-    background-color:#3D5A73;
+    background: linear-gradient(135deg, rgba(61,90,115,0.9), rgba(47,61,64,0.9)); /*Gradient background */
+    padding-top: 60px; /* Offset for fixed header */
 }
 
-
+/*Header styling */
 header {
     background-color: #2F3D40;
     color: #d5d1d1;
@@ -17,6 +20,24 @@ header {
     top: 0;
     left: 0;
     z-index: 1000;
+    box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.3); /*Shadow for header */
+}
+
+/*Attribute selectors*/
+a[href$=".html"] {
+    color: #13181d;
+    text-decoration: none;
+}
+
+a[href^="mailto:"] {
+    color: #333;
+    text-decoration: underline;
+}
+
+/* Navbar styling */
+.navbar {
+    display: flex;
+    justify-content: center;
 }
 
 header nav ul {
@@ -27,59 +48,41 @@ header nav ul {
     margin: 0;
 }
 
-
-
 header nav ul li a {
     color: #abbddc;
-    text-decoration: none;
     font-weight: bold;
     margin: 0 25px;
-    
+    transition: color 0.3s ease; /*Transition effect */
 }
 
+/*User action pseudo-class for hover */
+header nav ul li a:hover {
+    color: #fff;
+}
 
+/* Moving specific button to the left */
+.movetoleft {
+    margin-right: auto;
+}
+
+/* Main sections styling */
 section {
     padding: 20px;
     margin: 20px auto;
     max-width: 800px;
-    background-color: #fff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: rgba(255, 255, 255, 0.9); /*Semi-transparent background */
+    border-radius: 8px; /*Rounded corners */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /*Shadow */
 }
 
+/* Headings with text effects */
 h1, h2, h3 {
     color: #217373;
     text-align: center;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* 4. Text shadow */
 }
 
-p {
-    margin-bottom: 20px;
-}
-
-#about {
-    text-align: center;
-    
-}
-
-#projects .project {
-    margin-bottom: 20px;
-}
-
-#projects img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    margin: 0 auto;
-}
-
-
-#skills ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    list-style: none;
-    padding: 0;
-}
-
+/* Structural and Child combinator selectors */
 #skills ul li {
     margin: 10px;
     background-color: #333;
@@ -88,41 +91,147 @@ p {
     border-radius: 5px;
 }
 
+#skills ul > li:nth-child(odd) { /*nth-child selector for alternating colors */
+    background-color: #444;
+}
 
+/* Footer styling */
 footer {
-    background-color:#2F3D40;
-    color:#1e1826;
+    background-color: #2F3D40;
+    color: #1e1826;
     text-align: center;
-    padding: 1px 0;
+    padding: 10px 0;
     width: 100%;
-    bottom: 0;
     font-size: smaller;
 }
 
-
-
-body {
-    padding-top: 60px; 
+/*Child combinator and structural selectors */
+#about > p:not(:last-child) {
+    border-bottom: 1px solid #ddd;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
 }
-.highlight{
-    color:#2F3D40;
-    align-items:center;
-    display: block;
+
+/*Validity pseudo-class*/
+input:valid {
+    border-color: green;
 }
+
+input:invalid {
+    border-color: red;
+}
+
+/*Relational selector*/
+header nav ul li a:hover ~ a {
+    color: #fff;
+}
+
+/*Rounded profile picture */
 .profile-pic {
     display: block;
-    margin: 20px auto; 
-    width: 150px; 
-    height: 150px; 
-    border-radius: 50%; 
-    object-fit: cover; 
-    border: 4px solid #2F3D40; 
+    margin: 20px auto;
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 4px solid #2F3D40;
+    box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* 3. Shadow */
 }
-.navbar {
+
+/*Border and Transform */
+footer p {
+    border-top: 1px solid #ddd;
+    padding-top: 5px;
+    transition: transform 0.2s ease-in-out;
+}
+
+footer p:hover {
+    transform: scale(1.05); /* Slightly enlarge on hover */
+}
+
+/* 6. Pseudo-elements for generated content */
+footer::before {
+    content: "Connect with Shan Wijesooriya - ";
+    font-weight: bold;
+    color: #217373;
+}
+
+/* 19. Animation  */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+section {
+    animation: fadeIn 1s ease forwards;
+}
+
+/* Button with gradient and transition */
+button {
+    background: linear-gradient(45deg, #217373, #2F3D40);
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background 0.3s ease; /* 18. Transition */
+}
+
+button:hover {
+    background: linear-gradient(45deg, #2F3D40, #217373); /* Reverse gradient */
+}
+#newsletter {
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    margin-top: 30px;
+    border-radius: 8px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+#newsletter h2 {
+    color: #217373;
+}
+
+.newsletter-form {
     display: flex;
-    justify-content: center; 
-  }
-  .movetoleft {
-    margin-right: auto; 
-  }
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.newsletter-form input[type="email"] {
+    padding: 10px;
+    font-size: 16px;
+    border: 1px solid #2F3D40;
+    border-radius: 5px 0 0 5px;
+    outline: none;
+    transition: border-color 0.3s ease;
+}
+
+.newsletter-form input[type="email"]:focus {
+    border-color: #217373;
+}
+
+.newsletter-form button {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #2F3D40;
+    color: #fff;
+    border: none;
+    border-radius: 0 5px 5px 0;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+.newsletter-form button:hover {
+    background-color: #217373;
+}
+
   
