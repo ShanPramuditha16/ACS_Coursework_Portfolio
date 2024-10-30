@@ -1,0 +1,124 @@
+body {
+    font-family: Arial, sans-serif;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+    background-color:#506266;
+}
+
+
+header {
+    background-color: #10454F;
+    color: #fff;
+    padding: 10px 0;
+}
+
+header nav ul {
+    display: flex;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+header nav ul li {
+    margin: 0 15px;
+}
+
+header nav ul li a {
+    color: #818274;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+
+section {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h2, h3 {
+    color: #A3AB78;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 20px;
+}
+
+#about {
+    text-align: center;
+    
+}
+
+#projects .project {
+    margin-bottom: 20px;
+}
+
+#projects img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto;
+}
+
+
+#skills ul {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style: none;
+    padding: 0;
+}
+
+#skills ul li {
+    margin: 10px;
+    background-color: #333;
+    color: #fff;
+    padding: 10px 20px;
+    border-radius: 5px;
+}
+
+
+footer {
+    background-color:#333;
+    color:white;
+    text-align: center;
+    padding: 1px 0;
+    width: 100%;
+    bottom: 0;
+    font-size: smaller;
+}
+header {
+    background-color: #333;
+    color: #fff;
+    padding: 10px 0;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+
+body {
+    padding-top: 60px; 
+}
+.highlight{
+    color: teal;
+    align-items:center;
+    display: block;
+}
+.profile-pic {
+    display: block;
+    margin: 20px auto; 
+    width: 150px; 
+    height: 150px; 
+    border-radius: 50%; 
+    object-fit: cover; 
+    border: 4px solid #333; 
+}
