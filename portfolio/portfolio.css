@@ -67,10 +67,10 @@ header nav ul li a:hover {
 
 /* Main sections styling */
 section {
-    padding: 60px;
-    margin: 60px auto;
+    padding: 20px;
+    margin: 20px auto;
     max-width: 800px;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent background */
+    background-color: rgba(216, 226, 252, 0.91); /* Semi-transparent background */
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow */
 }
@@ -234,5 +234,28 @@ button:hover {
 .newsletter-form button:hover {
     background-color: #84B026; /* Lime Green on hover */
 }
+.icon-link {
+    color: #84B026; 
+    transition: color 0.3s ease;
+    margin: 10px; 
+}
+
+.icon-link:hover {
+    color: #217373; 
+}
+.icon-space {
+    margin-right: 15px; 
+}
+a.icon-space {
+    text-decoration: none; 
+}
+.icon-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 20px;
+}
+
+
 
   
