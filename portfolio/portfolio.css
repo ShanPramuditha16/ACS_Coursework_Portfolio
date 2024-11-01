@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
-/* Global Styles */
+
 :root {
     --primary-color: #217373;
     --secondary-color: #84B026;
@@ -10,7 +10,7 @@
 
 body {
     font-family: 'Roboto', sans-serif;
-    color: #3D3D3D; /* Dark Gray for text */
+    color: #3D3D3D; 
     line-height: 1.6;
     margin: 0;
     padding: 0;
@@ -21,8 +21,8 @@ body {
 
 /* Header styling */
 header {
-    background-color: #173540; /* Deep Teal */
-    color: #fff; /* White for text */
+    background-color: #173540;
+    color: #fff; 
     padding: 1rem 0;
     position: fixed;
     width: 100%;
@@ -40,8 +40,11 @@ a[href$=".html"] {
 }
 
 a[href^="mailto:"] {
-    color: #ECF0F1; 
+    color:#84B026; 
     text-decoration: underline;
+}
+a[href^="https:"]{
+    color:#84B026;
 }
 
 /* Navbar styling */
@@ -55,7 +58,7 @@ header nav ul {
 }
 
 header nav ul li a {
-    color: #84B026; /* Lime Green */
+    color: #84B026; 
     font-weight: bold;
     margin: 0 25px;
     padding: 0.5rem 1rem;
@@ -84,28 +87,32 @@ section {
     max-width: 800px;
     background-color: rgba(44, 62, 80, 0.95);
     color: #ECF0F1; 
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px; 
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow */
     animation: fadeIn 1s ease forwards; /* Animation */
 }
+
 
 .Hsize::first-letter {
     font-size: 2em;
     color: #84B026;
 }
 
-/* Headings with text effects */
+
 h1, h2, h3 {
     color: #84B026; 
     text-align: center;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Text shadow */
     margin-bottom: 1.5rem;
 }
+.homeexplore{
+    color: #ECF0F1;
+}
 
-/* Footer styling */
+
 footer {
     background-color: #173540; 
-    color: #ECF0F1; /* White for text */
+    color: #ECF0F1; 
     text-align: center;
     padding: 1rem 0;
     width: 100%;
@@ -129,7 +136,7 @@ input:invalid {
     border-color: #ff4444; /* Red for invalid inputs */
 }
 
-/* Rounded profile picture */
+
 .profile-pic {
     display: block;
     margin: 20px auto;
@@ -144,14 +151,14 @@ input:invalid {
 
 /* Border and Transform */
 footer p {
-    border-top: 1px solid #ddd; /* Border */
+    border-top: 1px solid #ddd; 
     padding-top: 0.5rem;
     transition: transform 0.2s ease-in-out; /* Transition */
     margin: 0;
 }
 
 footer p:hover {
-    transform: scale(1.05); /* Slightly enlarge on hover */
+    transform: scale(1.05); /*transform */
 }
 
 /* Pseudo-elements for generated content */
@@ -159,7 +166,7 @@ footer::before {
     content: "Connect with Shan Wijesooriya"; /* Generated content */
     display: block;
     font-weight: bold;
-    color: #84B026; /* Lime Green */
+    color: #84B026; 
     margin-bottom: 0.5rem;
 }
 
@@ -181,7 +188,7 @@ button {
     color: #ECF0F1;
     padding: 10px 20px;
     border: none;
-    border-radius: 4px; /* Rounded corners */
+    border-radius: 4px;
     cursor: pointer;
     transition: all 0.3s ease; /* Transition */
 }
@@ -198,15 +205,15 @@ button:focus {
     background-color: rgba(255, 255, 255, 0.1);
     padding: 2rem;
     margin-top: 2rem;
-    border-radius: 8px; /* Rounded corners */
+    border-radius: 8px; 
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
 }
 
 #newsletter h2 {
-    color: #84B026; /* Green Teal */
+    color: #84B026;
 }
 
-/* Newsletter form styling */
+
 .newsletter-form {
     display: flex;
     justify-content: center;
@@ -218,7 +225,7 @@ button:focus {
 .newsletter-form input[type="email"] {
     padding: 10px;
     font-size: 16px;
-    border: 1px solid #173540; /* Deep Teal */
+    border: 1px solid #173540; 
     border-radius: 5px;
     outline: none;
     transition: all 0.3s ease;
@@ -227,15 +234,15 @@ button:focus {
 }
 
 .newsletter-form input[type="email"]:focus {
-    border-color: #84B026; /* Lime Green on focus */
+    border-color: #84B026; 
     box-shadow: 0 0 5px rgba(132, 176, 38, 0.5);
 }
 
 .newsletter-form button {
     padding: 10px 20px;
     font-size: 16px;
-    background-color: #173540; /* Deep Teal */
-    color: #ECF0F1; /* White */
+    background-color: #173540; 
+    color: #ECF0F1; 
     border: none;
     border-radius: 5px;
     cursor: pointer;
@@ -244,13 +251,13 @@ button:focus {
 
 .newsletter-form button:hover,
 .newsletter-form button:focus {
-    background-color: #84B026; /* Lime Green on hover */
+    background-color: #84B026; 
     transform: translateY(-2px);
 }
 
 /* Icon styling */
 .icon-link {
-    color: #84B026; /* Lime Green */
+    color: #84B026; 
     transition: all 0.3s ease; /* Transition */
     margin: 10px; /* Space between icons */
     display: inline-block;
@@ -258,7 +265,7 @@ button:focus {
 
 .icon-link:hover,
 .icon-link:focus {
-    color: #ECF0F1; /* Green Teal on hover */
+    color: #ECF0F1; 
     transform: translateY(-2px);
 }
 
@@ -272,9 +279,9 @@ a.icon-space {
 
 .icon-container {
     display: flex;
-    justify-content: center; /* Center icons */
+    justify-content: center; 
     align-items: center;
-    margin: 20px 0; /* Margin for the container */
+    margin: 20px 0; 
     flex-wrap: wrap;
 }
 
