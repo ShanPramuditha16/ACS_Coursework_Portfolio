@@ -1,6 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
 
 /* Global Styles */
+:root {
+    --primary-color: #217373;
+    --secondary-color: #84B026;
+    --dark-bg: #173540;
+    --text-light: #ECF0F1;
+}
+
 body {
     font-family: 'Roboto', sans-serif;
     color: #3D3D3D; /* Dark Gray for text */
@@ -9,13 +16,14 @@ body {
     padding: 0;
     background: linear-gradient(135deg, rgba(61, 90, 115, 0.9), rgba(47, 61, 64, 0.9)); /* Gradient background */
     padding-top: 60px; /* Offset for fixed header */
+    min-height: 100vh;
 }
 
 /* Header styling */
 header {
     background-color: #173540; /* Deep Teal */
     color: #fff; /* White for text */
-    padding: 10px 0;
+    padding: 1rem 0;
     position: fixed;
     width: 100%;
     top: 0;
@@ -28,40 +36,40 @@ header {
 a[href$=".html"] {
     color: #84B026; 
     text-decoration: none;
+    transition: color 0.3s ease;
 }
 
 a[href^="mailto:"] {
-    color: #333; 
+    color: #ECF0F1; 
     text-decoration: underline;
 }
 
 /* Navbar styling */
-.navbar {
-    display: flex;
-    justify-content: center;
-}
-
 header nav ul {
     display: flex;
     justify-content: center;
     list-style: none;
     padding: 0;
     margin: 0;
+    flex-wrap: wrap;
 }
 
 header nav ul li a {
     color: #84B026; /* Lime Green */
     font-weight: bold;
     margin: 0 25px;
+    padding: 0.5rem 1rem;
     border-bottom: 2px solid transparent;
-    transition: color 0.3s ease; /* Transition effect */
+    transition: all 0.3s ease; /* Transition effect */
+    display: inline-block;
 }
 
 /* User action pseudo-class for hover */
 header nav ul li a:hover,
+header nav ul li a:focus,
 header nav ul li a.active {
-    color: #217373;
-    border-bottom: 2px solid white; 
+    color: #ECF0F1;
+    border-bottom: 2px solid #ECF0F1; 
 }
 
 /* Moving specific button to the left */
@@ -71,54 +79,45 @@ header nav ul li a.active {
 
 /* Section styling */
 section {
-    padding: 20px;
+    padding: 2rem;
     margin: 20px auto;
     max-width: 800px;
-    background-color: #2C3E50; 
+    background-color: rgba(44, 62, 80, 0.95);
     color: #ECF0F1; 
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); /* Shadow */
+    animation: fadeIn 1s ease forwards; /* Animation */
 }
-.Hsize::first-letter{
+
+.Hsize::first-letter {
     font-size: 2em;
-    color: #217373;
+    color: #84B026;
 }
 
 /* Headings with text effects */
 h1, h2, h3 {
-    color: #217373; 
+    color: #84B026; 
     text-align: center;
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.3); /* Text shadow */
-}
-
-/* Structural and Child combinator selectors */
-#skills ul li {
-    margin: 10px;
-    background-color: #84B026; /* Lime Green */
-    color: #fff; /* White text */
-    padding: 10px 20px;
-    border-radius: 5px; /* Rounded corners */
-}
-
-#skills ul > li:nth-child(odd) { /* nth-child selector for alternating colors */
-    background-color: #217373; /* Green Teal */
+    margin-bottom: 1.5rem;
 }
 
 /* Footer styling */
 footer {
     background-color: #173540; 
-    color: #fff; /* White for text */
+    color: #ECF0F1; /* White for text */
     text-align: center;
-    padding: 10px 0;
+    padding: 1rem 0;
     width: 100%;
     font-size: smaller;
+    margin-top: auto;
 }
 
 /* Child combinator and structural selectors */
 #about > p:not(:last-child) {
     border-bottom: 1px solid #ddd; /* Border */
-    padding-bottom: 10px;
-    margin-bottom: 10px;
+    padding-bottom: 1rem;
+    margin-bottom: 1rem;
 }
 
 /* Validity pseudo-class */
@@ -127,12 +126,7 @@ input:valid {
 }
 
 input:invalid {
-    border-color: red; /* Red for invalid inputs */
-}
-
-/* Relational selector */
-header nav ul li a:hover ~ a {
-    color: #fff; /* White on hover */
+    border-color: #ff4444; /* Red for invalid inputs */
 }
 
 /* Rounded profile picture */
@@ -145,15 +139,15 @@ header nav ul li a:hover ~ a {
     object-fit: cover;
     border: 4px solid #173540; 
     box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.5); /* Shadow */
-
+    background-color: #ECF0F1;
 }
-
 
 /* Border and Transform */
 footer p {
     border-top: 1px solid #ddd; /* Border */
-    padding-top: 5px;
+    padding-top: 0.5rem;
     transition: transform 0.2s ease-in-out; /* Transition */
+    margin: 0;
 }
 
 footer p:hover {
@@ -163,8 +157,10 @@ footer p:hover {
 /* Pseudo-elements for generated content */
 footer::before {
     content: "Connect with Shan Wijesooriya"; /* Generated content */
+    display: block;
     font-weight: bold;
     color: #84B026; /* Lime Green */
+    margin-bottom: 0.5rem;
 }
 
 /* Animation */
@@ -179,37 +175,35 @@ footer::before {
     }
 }
 
-section {
-    animation: fadeIn 1s ease forwards; /* Animation */
-}
-
 /* Button with gradient and transition */
 button {
     background: linear-gradient(45deg, #217373, #173540); /* Gradient */
-    color: white;
+    color: #ECF0F1;
     padding: 10px 20px;
     border: none;
     border-radius: 4px; /* Rounded corners */
     cursor: pointer;
-    transition: background 0.3s ease; /* Transition */
+    transition: all 0.3s ease; /* Transition */
 }
 
-button:hover {
+button:hover,
+button:focus {
     background: linear-gradient(45deg, #173540, #217373); /* Reverse gradient */
+    transform: translateY(-2px);
 }
 
 /* Newsletter section */
 #newsletter {
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.9); /* Semi-transparent */
-    padding: 20px;
-    margin-top: 30px;
+    background-color: rgba(255, 255, 255, 0.1);
+    padding: 2rem;
+    margin-top: 2rem;
     border-radius: 8px; /* Rounded corners */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2); /* Shadow */
 }
 
 #newsletter h2 {
-    color: #217373; /* Green Teal */
+    color: #84B026; /* Green Teal */
 }
 
 /* Newsletter form styling */
@@ -217,46 +211,55 @@ button:hover {
     display: flex;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
+    gap: 1rem;
+    margin-top: 1rem;
 }
 
 .newsletter-form input[type="email"] {
     padding: 10px;
     font-size: 16px;
     border: 1px solid #173540; /* Deep Teal */
-    border-radius: 5px 0 0 5px; /* Rounded corners */
+    border-radius: 5px;
     outline: none;
-    transition: border-color 0.3s ease;
+    transition: all 0.3s ease;
+    background-color: rgba(255, 255, 255, 0.9);
+    min-width: 250px;
 }
 
 .newsletter-form input[type="email"]:focus {
     border-color: #84B026; /* Lime Green on focus */
+    box-shadow: 0 0 5px rgba(132, 176, 38, 0.5);
 }
 
 .newsletter-form button {
     padding: 10px 20px;
     font-size: 16px;
     background-color: #173540; /* Deep Teal */
-    color: #fff; /* White */
+    color: #ECF0F1; /* White */
     border: none;
-    border-radius: 0 5px 5px 0; /* Rounded corners */
+    border-radius: 5px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Transition */
+    transition: all 0.3s ease; /* Transition */
 }
 
-.newsletter-form button:hover {
+.newsletter-form button:hover,
+.newsletter-form button:focus {
     background-color: #84B026; /* Lime Green on hover */
+    transform: translateY(-2px);
 }
 
 /* Icon styling */
 .icon-link {
     color: #84B026; /* Lime Green */
-    transition: color 0.3s ease; /* Transition */
+    transition: all 0.3s ease; /* Transition */
     margin: 10px; /* Space between icons */
+    display: inline-block;
 }
 
-.icon-link:hover {
-    color: #217373; /* Green Teal on hover */
+.icon-link:hover,
+.icon-link:focus {
+    color: #ECF0F1; /* Green Teal on hover */
+    transform: translateY(-2px);
 }
 
 .icon-space {
@@ -271,7 +274,66 @@ a.icon-space {
     display: flex;
     justify-content: center; /* Center icons */
     align-items: center;
-    margin: 20px; /* Margin for the container */
+    margin: 20px 0; /* Margin for the container */
+    flex-wrap: wrap;
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300;400;700&display=swap');
+
+/* Tablet View (768px to 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    header { padding: 0.5rem 0; }
+    header nav ul { padding: 0 1rem; }
+    header nav ul li a { margin: 0 15px; font-size: 0.9rem; padding: 0.4rem 0.8rem; }
+    .movetoleft { margin-right: 1rem; }
+    section { margin: 20px; padding: 1.5rem; }
+    footer, .icon-container { padding: 1rem; }
+    footer::before { font-size: 0.9rem; }
+}
+
+/* Mobile View (up to 767px) */
+@media screen and (max-width: 767px) {
+    body { padding-top: 0; }
+    header { padding: 1rem 0; position: relative; }
+    header nav ul { flex-direction: column; align-items: center; padding: 0; }
+    header nav ul li { width: 100%; text-align: center; margin: 0.3rem 0; }
+    header nav ul li a { display: block; padding: 0.8rem; margin: 0; border-radius: 4px; }
+    .movetoleft { margin: 0; order: -1; margin-bottom: 1rem; }
+    section { margin: 1rem; padding: 1rem; border-radius: 4px; }
+    .profile-pic { width: 120px; height: 120px; margin: 1rem auto; }
+    .newsletter-form { flex-direction: column; gap: 0.8rem; }
+    .newsletter-form input[type="email"], .newsletter-form button { width: 100%; }
+    footer { padding: 1rem; position: relative; }
+    footer::before, footer p { font-size: 0.8rem; margin-bottom: 0.8rem; }
+    .icon-container { flex-wrap: wrap; gap: 1rem; padding: 0.5rem; }
+    .icon-link { font-size: 0.9rem; }
+}
+
+/* Small Mobile View (up to 480px) */
+@media screen and (max-width: 480px) {
+    header nav ul li a { font-size: 0.9rem; padding: 0.6rem; }
+    section { margin: 0.5rem; padding: 0.8rem; }
+    h1 { font-size: 1.5rem; }
+    h2 { font-size: 1.3rem; }
+    #newsletter { padding: 1rem; }
+    #newsletter h2 { font-size: 1.2rem; }
+    footer::before, footer p { font-size: 0.75rem; }
+    .profile-pic { width: 100px; height: 100px; }
+}
+
+/* Landscape Mode (max-height 500px) */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    header, body { position: relative; padding-top: 0; }
+    header nav ul { flex-direction: row; flex-wrap: wrap; justify-content: center; }
+    .movetoleft { width: 100%; text-align: center; margin-bottom: 0.5rem; }
+    .profile-pic { width: 80px; height: 80px; }
+}
+
+/* Print Media */
+@media print {
+    header, body { position: relative; padding-top: 0; background: none; }
+    section { box-shadow: none; margin: 0; padding: 1rem; }
+    .profile-pic { width: 100px; height: 100px; }
 }
 
 
