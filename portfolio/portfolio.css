@@ -129,11 +129,14 @@ footer {
 
 /* Validity pseudo-class */
 input:valid {
-    border-color: #84B026; /* Lime Green for valid inputs */
+    border: 2px solid green; 
 }
 
 input:invalid {
-    border-color: #ff4444; /* Red for invalid inputs */
+    border: 2px solid red;
+}
+input:not(:valid):placeholder-shown {
+    border: none;                     
 }
 
 
@@ -221,6 +224,7 @@ button:focus {
     align-items: center;
     gap: 1rem;
     margin-top: 1rem;
+    
 }
 
 .newsletter-form input[type="email"] {
@@ -232,11 +236,14 @@ button:focus {
     transition: all 0.3s ease;
     background-color: rgba(255, 255, 255, 0.9);
     min-width: 250px;
+    
+    
 }
 
 .newsletter-form input[type="email"]:focus {
     border-color: #84B026; 
     box-shadow: 0 0 5px rgba(132, 176, 38, 0.5);
+    
 }
 
 .newsletter-form button {

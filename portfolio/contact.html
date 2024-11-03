@@ -30,7 +30,7 @@
             <h2>Subscribe to my Newsletter</h2>
             <p>Stay updated with the latest news, blog posts, and project updates.</p>
             <form action="newsletter_signup.php" method="POST" class="newsletter-form">
-                <input type="email" name="email" placeholder="Enter your email" required>
+                <input type="text" id="name" placeholder="Enter your name" required pattern=".{2,}">
                 <button type="submit">Subscribe</button>
             </form>
         </div>
